@@ -26,16 +26,15 @@ module.exports = app => {
             }
         ]
     
-        // let connection = app.infra.connectionFactory()
-        // let listaDB = app.infra.ListaDB
+        let connection = app.infra.connectionFactory()
+        let listaDB = app.infra.ListaDB
 
-        // listaDB.lista(connection, (err, result) => {
-        //     if (err) console.log(err)
-        //     res.json(result)
-        // })
+        listaDB.lista(connection, (err, result) => {
+            if (err) console.log(err)
+            res.json(result)
+        })
 
         res.json(produtos)
-    
     })
 
 }
