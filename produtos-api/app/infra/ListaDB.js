@@ -1,10 +1,9 @@
 module.exports = {
-    lista: function(conn) {
-        conn.query('select * from produtos')
+    lista: function(conn, callback) {
+        conn.query('select * from produtos', callback)
     }
     //,
     // insere: function(conn, item, callback) {
     //     conn.query(`insert into produtos (item) values ('${item}')`)
     // }
-    // não precisa do callback
 }
