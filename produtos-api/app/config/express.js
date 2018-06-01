@@ -1,6 +1,5 @@
 const express = require('express')
 const load = require('express-load')
-const router = express.Router()
 const bodyParser = require('body-parser')
 
 module.exports = () => {
@@ -11,7 +10,7 @@ module.exports = () => {
     app.use(bodyParser.json())
     app.set('json spaces', 4)
 
-    router.use((req, res, next) => {
+    app.use((req, res, next) => {
         res.setHeader('Access-Control-Allow-Origin', '*');
         res.setHeader('Access-Control-Allow-Methods', 'GET');
         res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
