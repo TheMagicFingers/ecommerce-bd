@@ -23,11 +23,11 @@ CREATE TABLE IF NOT EXISTS `dbstore`.`clientes` (
 -- Table `mydb`.`produtos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `dbstore`.`produtos` (
-  `id_produtos` INT NOT NULL,
-  `descricao` VARCHAR(45) NULL,
+  `id_produtos` INT NOT NULL AUTO_INCREMENT,
+  `descricao` VARCHAR(255) NULL,
   `preco_unit` DECIMAL(5,2) NULL,
   `qtd_est` DECIMAL NULL,
-  `url_img` VARCHAR(45) NULL,
+  `url_img` VARCHAR(255) NULL,
   PRIMARY KEY (`id_produtos`));
 
 
