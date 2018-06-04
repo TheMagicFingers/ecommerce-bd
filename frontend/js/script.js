@@ -38,7 +38,6 @@ function montaDiv(produto) {
     div.classList.add('col')
     div.classList.add('s12')
     div.classList.add('m4')
-    
     // cria a div class='thumbnail'
     let div2 = document.createElement('div')
     div2.classList.add('thumbnail')
