@@ -1,0 +1,18 @@
+<% include partials/header %>
+    <div class="row text-center" id="listaProdutos">
+        <% data.forEach(function(data){ %>
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="<%= data.url_img %>" class="responsive-img">
+                    </div>
+                    <div class="card-content" style="text-align : center;">
+                      <h4 class="center"> Preço <%= data.preco_unit %></h4> 
+                      <button class="btn blue darken-4 z-depth-4" style="text-align : center;"> Adicionar ao carrinho</button>
+                    </div>
+                      
+             </div>          
+             </div>
+         <% }); %>
+    </div>
+ <% include partials/footer %>
