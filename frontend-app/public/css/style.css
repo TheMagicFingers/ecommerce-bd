@@ -19,3 +19,7 @@ main {
     max-height: none;
     object-fit: none;
 }
+.icones{
+  display: inline !important;
+  vertical-align: bottom !important;
+}
