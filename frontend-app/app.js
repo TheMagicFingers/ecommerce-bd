@@ -27,6 +27,10 @@ app.get('/produtos/:id', (req,res) =>{
     })
 })
 
+app.get('/login', (req,res) => {
+    res.render('login');
+})
+
 app.listen(9000, function(){
     console.log("running...");
 });

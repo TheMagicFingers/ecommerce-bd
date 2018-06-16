@@ -1,18 +1,43 @@
-<% include partials/header %>
-        <div class="row">
-                <form class="col s12 m6 center-align">
+<% include partials/header %>    
+                <!-- <form class="col s12 m6" action="/login" method="POST" id="loginForm">
                   <div class="row">
-                    <div class="input-field col s12 m6">
+                    <div class="input-field col s12 m5">
                       <i class="material-icons prefix">account_circle</i>
                       <input id="icon_prefix" type="text" class="validate">
                       <label for="icon_prefix">Login</label>
                     </div>
-                    <div class="input-field col s12 m6">
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12 m5">
+                        <i class="material-icons prefix">account_circle</i>
                       <input id="password" type="password" class="validate">
                       <label for="password">Senha</label>
                     </div>
                   </div>
-                  <button class="btn">Logar</button>
-                </form>
-          </div>
+
+                  <button class="btn btn-large">Logar</button>
+                </form> -->
+                <div class="valign-wrapper row login-box">
+                    <div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4">
+                      <form>
+                        <div class="card-content">
+                          <span class="card-title">Login</span>
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <label for="email">Login</label>
+                              <input type="email" class="validate" name="email" id="email" />
+                            </div>
+                            <div class="input-field col s12">
+                              <label for="password">Password </label>
+                              <input type="password" class="validate" name="password" id="password" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-action right-align">
+                          <input type="reset" id="reset" class="btn-flat grey-text waves-effect">
+                          <input type="submit" class="btn white-text blue darken-4 waves-effect waves-light " value="Login">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
 <% include partials/footer %>
