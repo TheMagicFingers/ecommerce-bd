@@ -6,8 +6,8 @@
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `dbstore` DEFAULT CHARACTER SET utf8 ;
+USE `dbstore` ;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`clientes`
