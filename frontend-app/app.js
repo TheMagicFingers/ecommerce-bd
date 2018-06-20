@@ -22,6 +22,8 @@ app.get('/produtos', (req,res) =>{
 //Show route
 app.get('/produtos/:id', (req,res) =>{
     //Buscar na fetch api informações sobre um único produto
+    let id = req.params.id;
+    
     res.render('produto', {
         data: data
     })
@@ -29,6 +31,10 @@ app.get('/produtos/:id', (req,res) =>{
 
 app.get('/login', (req,res) => {
     res.render('login');
+})
+
+app.get('/cadastrar', (req,res) =>{
+    res.render('cadastrar');
 })
 
 app.listen(9000, function(){
