@@ -6,6 +6,9 @@ const seedDB = require('../db/seed')
 module.exports = () => {
 
     let app = express()
+    
+    //Usar apenas 1 vez quando for criado o servidor para poder adicionar elementos ao banco de dados
+    //seedDB()
 
     app.use(bodyParser.urlencoded({urlencoded: true}))
     app.use(bodyParser.json())
@@ -18,7 +21,7 @@ module.exports = () => {
         
         next()
     })
-    seedDB()
+    
 
     load('routes', {cwd: 'app'})
         .then('infra')
