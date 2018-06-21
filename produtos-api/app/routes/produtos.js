@@ -8,8 +8,6 @@ module.exports = app => {
             if (err) console.log(err)
             res.json(result)
         })
-
-        connection.end()
     })
     // SHOW - mostra apenas um produto pelo id
     app.get('/api/produtos/:id', (req,res) => {
@@ -21,7 +19,6 @@ module.exports = app => {
             if(err) return err
             res.json(result)
         })
-
-        connection.end()
     })
+    //FAZER EDIT E DESTROY E UPDATE
 }

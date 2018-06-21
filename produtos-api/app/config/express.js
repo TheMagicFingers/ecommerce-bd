@@ -22,7 +22,6 @@ module.exports = () => {
         next()
     })
     
-
     load('routes', {cwd: 'app'})
         .then('infra')
         .into(app)
