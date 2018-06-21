@@ -9,6 +9,7 @@ module.exports = app => {
             res.json(result)
         })
 
+        connection.end()
     })
     // SHOW - mostra apenas um produto pelo id
     app.get('/api/produtos/:id', (req,res) => {
@@ -20,6 +21,7 @@ module.exports = app => {
             if(err) return err
             res.json(result)
         })
+
+        connection.end()
     })
-    //UPDATE - será usado para atualizar o estoque
 }

@@ -3,8 +3,6 @@ module.exports = {
         conn.query('select * from produtos', callback)
     }
     ,
-
-
     procuraPorId: function(conn, id, callback) {
         conn.query(`select * from produtos where id_produtos = ${id}`,callback)
     }
