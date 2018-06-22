@@ -27,7 +27,8 @@ module.exports = {
     }
     ,
     // USER
-    criarUser: function(conn, User , callback){
+    // Criar um procedure para adicionar um usuario - necessario adicionar em tabela de enredereço também
+    registrarUser: function(conn, User , callback){
         conn.query(`insert into clientes(nome_user,email_user,senha_user)
                     values (${User.nome},${User.email},${User.senha})`, callback)
     }
@@ -36,23 +37,23 @@ module.exports = {
         conn.query(`select * from clientes where id_cliente=${id}`,callback)
     }
     ,
-    login: function(conn, id , callback) {
-
+    //Criar session para logar user - passport-js
+    login: function(conn,auth,callback) {
+        conn.quer
     }
     ,
+    //close session
     logout: function(conn, id , callback){
 
     }
     ,
-    register: function(conn ,id , callback){
-
-    }
-    ,
     //NOTAS
+    //Procedure
     criarVenda: function(conn , User, produtos , callback){
-
+        conn.query(``)
     }
     ,
+    //Procedure
     excluirVenda: function (conn, id , callback){
 
     }
