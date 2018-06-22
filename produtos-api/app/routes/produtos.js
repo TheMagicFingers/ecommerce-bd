@@ -4,7 +4,7 @@ module.exports = app => {
         let connection = app.infra.connectionFactory()
         let listaDB = app.infra.ListaDB
 
-        listaDB.lista(connection, (err, result) => {
+        listaDB.listaTodosProdutos(connection, (err, result) => {
             if (err) console.log(err)
             res.json(result)
         })
