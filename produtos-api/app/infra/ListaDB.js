@@ -10,7 +10,7 @@ module.exports = {
     ,
     insereProduto: function(conn, Produto , callback) {
         conn.query(`insert into produtos(descricao,preco_unit,qtd_est,url_img)
-                    values (${Produto.descricao},${Produto.preco_unit},0,${Produto.url_img})`, callback)
+                    values ('${Produto.descricao}',${Produto.preco_unit},0,'${Produto.url_img}')`, callback)
     }
     ,
     deletaProduto: function(conn, id , callback){

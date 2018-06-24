@@ -9,7 +9,7 @@ module.exports = () => {
     //Usar apenas 1 vez quando for criado o servidor para poder adicionar elementos ao banco de dados
     //seedDB()
 
-    app.use(express.urlencoded({urlencoded: true}))
+    app.use(express.urlencoded({extended: false}))
     app.use(express.json())
     app.set('json spaces', 4)
     

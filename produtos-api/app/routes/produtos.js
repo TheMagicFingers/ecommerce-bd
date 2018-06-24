@@ -13,15 +13,17 @@ module.exports = app => {
     app.post('/api/produtos',(req,res) => {
         let connection = app.infra.connectionFactory()
         let listaDB = app.infra.ListaDB
+
         let produto = {
             descricao:req.body.descricao,
             preco_unit: req.body.preco_unit,
-            qtd_est:0,
+            qtd_est:'0',
             url_img: req.body.url_img
         }
 
         listaDB.insereProduto(connection, produto, (err,result) => {
             if (err) console.log(err)
+            console.log("Produto adicionado no BD")
             res.json(result)
         })
     })
@@ -51,14 +53,16 @@ module.exports = app => {
     app.patch('/api/produtos/:id', (req,res) => {
         let connection = app.infra.connectionFactory()
         let listaDB = app.infra.ListaDB
+        
         let produto = {
+            id:req.params.id,
             descricao:req.body.descricao,
             preco_unit: req.body.preco_unit,
             qtd_est:req.body.qtd_est,
             url_img: req.body.url_img
         }
 
-        listaDB.editarProduto(connection, id, (err, result) => {
+        listaDB.editarProduto(connection, produto, (err, result) => {
             if(err) return err
             res.json(result)
         })
