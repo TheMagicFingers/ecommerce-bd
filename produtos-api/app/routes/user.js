@@ -1,29 +1,43 @@
 module.exports = app => {
-    // Get user by ID
-    app.get('/api/user/:id' , (req,res) => {
-        let connection = app.infra.connectionFactory()
-        let listaDB = app.infra.ListaDB
 
-        listaDB.procuraUserPorId(connection,req.params.id, (err,result) => {
-            if(err) console.log (err)
-            return res.json(result)
-        })
-    })
     //Create User
-    app.post('/api/user', (req,res) => {
+    app.post('/api/cadastrar', (req,res) => {
         let connection = app.infra.connectionFactory()
         let listaDB = app.infra.ListaDB
+        
         let User = {
-            nome:req.params.nome,
-            senha:req.params.senha,
-            email:req.params.email
+            "nome":req.body.first_name.join(" ",req.body.last_name),
+            "senha":req.body.password,
+            "email":req.body.email
         }
 
-        listaDB.procuraUserPorId(connection, User, (err,result) => {
+        endereco = {
+            rua: req.body.rua,
+            estado:req.body.estado,
+            bairro:req.body.bairro,
+            numero:req.body.numero,
+            logradouro:req.body.logradouro
+        }
+
+        listaDB.registrarUser(connection, User, (err,result) => {
             if(err) console.log (err)
-            return res.json(result)
+            listaDB.inserirEndereco(connection,result.insertId,endereco,(err, result) => {
+                if(err) console.log (err)
+                console.log("user inserido com sucesso")
+                return res.json(result)
+            })
         })
     })
+        // Get user by ID
+        app.get('/api/user/:id' , (req,res) => {
+            let connection = app.infra.connectionFactory()
+            let listaDB = app.infra.ListaDB
+    
+            listaDB.procuraUserPorId(connection,req.params.id, (err,result) => {
+                if(err) console.log (err)
+                return res.json(result)
+            })
+        })
     app.post('/api/user/login', (req,res) => {
         let connection = app.infra.connectionFactory()
         let listaDB = app.infra.ListaDB
@@ -50,5 +64,4 @@ module.exports = app => {
             }
         })
     })
-
 }

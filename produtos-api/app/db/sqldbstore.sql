@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `dbstore`.`notas` (
 -- Table `mydb`.`endereco`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `dbstore`.`endereco` (
- `id_cliente` INT NOT NULL, 
+  `id_cliente` INT NOT NULL, 
   `rua` VARCHAR(45) NOT NULL,
   `logradouro` VARCHAR(45) NOT NULL,
   `numero` VARCHAR(45) NOT NULL,

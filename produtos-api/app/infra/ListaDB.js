@@ -30,7 +30,14 @@ module.exports = {
     // Criar um procedure para adicionar um usuario - necessario adicionar em tabela de enredereço também
     registrarUser: function(conn, User , callback){
         conn.query(`insert into clientes(nome_user,email_user,senha_user)
-                    values (${User.nome},${User.email},${User.senha})`, callback)
+                    values ('${User.nome}','${User.email}','${User.senha}')`, callback)
+    }
+    ,
+   inserirEndereco: function(conn, id_cliente,endereco, callback){
+        conn.query(`insert into endereco(id_cliente,rua,estado,bairro,logradouro,numero)
+        values ('${id_cliente}','${endereco.rua}',
+        '${endereco.estado}','${endereco.bairro}',
+        '${endereco.logradouro}','${endereco.numero}')`, callback)
     }
     ,
     procuraUserPorId: function(conn, id , callback) {

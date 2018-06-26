@@ -1,5 +1,5 @@
 <% include partials/header %>
-    <div class="row text-center">
+    <div class="row text-center" id="listaProdutos">
         <% data.forEach(function(data){ %>
             <div class="col s12 m4">
                 <div class="card">
@@ -10,7 +10,6 @@
                       <h4 class="center"> Preço <%= data.preco_unit %></h4>
                       <a href="/produtos/<%= data.id_produtos %>" class="btn blue darken-4 z-depth-4 waves-effect waves-light" style="text-align : center;"> <i class="material-icons icones">add</i> Ver mais</a>
                     </div>
-                      
              </div>          
              </div>
          <% }); %>
