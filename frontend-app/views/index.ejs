@@ -1,14 +1,14 @@
 <% include partials/header %>
-    <div class="row text-center" id="listaProdutos">
+    <div class="row text-center">
         <% data.forEach(function(data){ %>
             <div class="col s12 m4">
                 <div class="card">
                     <div class="card-image">
-                        <img src="<%= data.url_img %>" class="responsive-img">
+                        <img src="<%= data.url_img %>" class="responsive-img" >
                     </div>
                     <div class="card-content" style="text-align : center;">
-                      <h4 class="center"> Preço <%= data.preco_unit %></h4> 
-                      <button class="btn blue darken-4 z-depth-4 waves-effect waves-light" style="text-align : center;"> <i class="material-icons icones">add</i> Ver mais</button>
+                      <h4 class="center"> Preço <%= data.preco_unit %></h4>
+                      <a href="/produtos/<%= data.id_produtos %>" class="btn blue darken-4 z-depth-4 waves-effect waves-light" style="text-align : center;"> <i class="material-icons icones">add</i> Ver mais</a>
                     </div>
                       
              </div>          

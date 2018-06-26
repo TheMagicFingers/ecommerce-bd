@@ -38,19 +38,25 @@ module.exports = {
     }
     ,
     //Criar session para logar user - passport-js
-    login: function(conn,auth,callback) {
-        conn.quer
-    }
-    ,
-    //close session
-    logout: function(conn, id , callback){
-
+    login: function(conn,email,callback) {
+        conn.query(`select nome_user,senha_user from clientes where email_user = '${email}'`,callback)
     }
     ,
     //NOTAS
+    listaTodasNotas: function(conn, callback) {
+        conn.query('select * from notaFiscalCompleta;', callback)
+    }
+    ,
+    procuraNotaPorId: function(conn, id, callback) {
+        conn.query(`select * from notaFiscalCompleta where id_cliente=${id}`,callback)
+    }
+    ,
     //Procedure
-    criarVenda: function(conn , User, produtos , callback){
-        conn.query(``)
+    criarVenda: function(conn,id_cliente,Vendas,metodo,callback){
+        
+        for(let i = 0 ; i < Vendas.length ; i++){
+            conn.query(`call fazer_venda(${id_cliente},'${metodo}',${Vendas.produto},${Vendas.quantidade})`,callback)
+        }
     }
     ,
     //Procedure
